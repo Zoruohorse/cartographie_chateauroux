@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Réseau des acteurs — Châteauroux / Google Ozans</title>
+  <link rel="stylesheet" href="../../assets/css/common.css">
+  <link rel="stylesheet" href="../../assets/css/network.css">
+</head>
+<body>
+  <div class="network-app">
+    <header class="network-header">
+      <a class="back-link" href="../../">← Accueil</a>
+      <div class="header-copy">
+        <span class="eyebrow">Cartographie relationnelle</span>
+        <h1 id="network-title">Réseau des acteurs</h1>
+        <p id="network-subtitle"></p>
+      </div>
+      <a class="view-switch" href="../cards/">Vue en cartes</a>
+    </header>
+
+    <section class="network-toolbar" aria-label="Commandes du réseau">
+      <label class="search-box" for="search">
+        <span aria-hidden="true">⌕</span>
+        <input id="search" type="search" placeholder="Rechercher un acteur, un rôle ou une relation…" autocomplete="off">
+        <button id="clear-search" type="button" aria-label="Effacer la recherche">×</button>
+      </label>
+      <div class="toolbar-actions">
+        <button id="fit" type="button">Tout afficher</button>
+        <button id="center" type="button">Recentrer</button>
+        <button id="reset" type="button">Réinitialiser</button>
+      </div>
+    </section>
+
+    <div class="network-layout">
+      <aside class="filters-panel">
+        <div class="panel-heading">
+          <div><span class="panel-kicker">Filtres</span><h2>Familles d’acteurs</h2></div>
+          <button id="toggle-all" type="button">Tout désélectionner</button>
+        </div>
+        <div id="checks" class="filter-list"></div>
+        <p id="count" class="count" aria-live="polite"></p>
+        <p class="hint">Cliquez sur un nœud pour isoler ses relations. Faites glisser les nœuds. Utilisez la molette pour zoomer.</p>
+      </aside>
+
+      <main id="chart" class="chart-panel">
+        <div class="chart-status"><span class="status-dot"></span><span>Réseau interactif</span></div>
+        <div class="tooltip" id="tooltip"></div>
+        <svg id="svg" role="img" aria-label="Réseau relationnel des acteurs du projet Google Ozans"></svg>
+      </main>
+
+      <aside id="details" class="details-panel" aria-live="polite"></aside>
+    </div>
+  </div>
+  <script type="module" src="../../assets/js/network.js"></script>
+</body>
+</html>
